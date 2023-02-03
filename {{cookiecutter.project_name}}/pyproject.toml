@@ -10,6 +10,9 @@ readme = "README.md"
 
 [project.optional-dependencies]
 dev = [
+    "mypy==0.991",
+    "pre-commit==3.0.3",
+    "pylint==2.16.1",
     "pytest==7.2.1",
     "tox==4.4.4"
 ]
@@ -22,3 +25,28 @@ main = "{{cookiecutter.package_name}}.main:main"
 
 [tool.setuptools.package-data]
 {{cookiecutter.package_name}} = ["py.typed"]
+
+
+[tool.black]
+line-length = 88
+
+[tool.mypy]
+strict = true
+
+[tool.pylint]
+disable = ["C0114", "C0115", "C0116"]
+max-line-length = 88
+good-names = ["i", "j", "k", "fp", "ex"]
+bad-names = ["foo", "bar", "baz", "data", "tmp", "temp"]
+bad-names-rgxs = [
+    ".*[C c]heck(er)?.*",
+    ".*[H h]elp(er)?.*",
+    ".*[G g]ett(er)?",
+    ".*[I i]nfo.*",
+    ".*[M m]ake.*",
+    ".*[P p]rocess.*",
+    ".*[U u]til.*",
+    ".*[V v]alidate.*",
+    ".*[V v]erify.*",
+    "my_.*",
+]
