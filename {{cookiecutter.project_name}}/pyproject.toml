@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=66.1.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{cookiecutter.package_name}}"
+version = "0.0.1"
+description = "{{cookiecutter.description}}"
+readme = "README.md"
+
+[project.optional-dependencies]
+dev = [
+]
+
+[project.scripts]
+main = "{{cookiecutter.package_name}}.main:main"
+
+
+[tool]
+
+[tool.setuptools.package-data]
+{{cookiecutter.package_name}} = ["py.typed"]

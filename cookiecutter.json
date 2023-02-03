@@ -1,0 +1,5 @@
+{
+  "project_name": "Project-Name",
+  "package_name": "{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}",
+  "description": "A template for simple Python projects."
+}
