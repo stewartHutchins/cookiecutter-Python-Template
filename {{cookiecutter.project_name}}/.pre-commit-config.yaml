@@ -39,5 +39,6 @@ repos:
   - id: mypy
     name: MyPy
     entry: mypy
+    args: [--ignore-missing-imports]
     language: system
     files: \.py$
