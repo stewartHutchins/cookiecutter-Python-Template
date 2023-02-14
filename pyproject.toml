@@ -1,0 +1,44 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=66.1.0"]
+
+[project]
+description = "A simple cookiecutter template for simple Python projects."
+name = "cookie-cutter-Pyhon"
+readme = "README.md"
+version = "0.0.1"
+
+[project.optional-dependencies]
+dev = [
+  "mypy==0.991",
+  "pre-commit==3.0.3",
+  "pylint==2.16.1",
+  "pytest==7.2.1",
+  "tox==4.4.4"
+]
+
+[tool]
+
+[tool.black]
+line-length = 88
+
+[tool.mypy]
+strict = true
+
+[tool.pylint]
+bad-names = ["foo", "bar", "baz", "data", "tmp", "temp"]
+bad-names-rgxs = [
+  ".*[C c]heck(er)?.*",
+  ".*[H h]elp(er)?.*",
+  ".*[G g]ett(er)?",
+  ".*[I i]nfo.*",
+  ".*[M m]ake.*",
+  ".*[P p]rocess.*",
+  ".*[U u]til.*",
+  ".*[V v]alidate.*",
+  ".*[V v]erify.*",
+  "my_.*"
+]
+disable = ["C0114", "C0115", "C0116"]
+good-names = ["i", "j", "k", "fp", "ex"]
+max-line-length = 88
