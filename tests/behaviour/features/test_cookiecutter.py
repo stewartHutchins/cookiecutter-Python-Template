@@ -68,7 +68,11 @@ def _git_init(repo: Path) -> None:
 
 def _pre_commit(args: str, repo: Path, *, check: bool) -> None:
     subprocess.run(
-        f". .venv-dev/bin/activate && pre-commit {args} && deactivate",
+        f"""
+    . .venv-dev/bin/activate &&
+    git add . &&
+    pre-commit {args}
+    """,
         cwd=repo,
         check=check,
         shell=True,
