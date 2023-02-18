@@ -3,20 +3,20 @@ build-backend = "setuptools.build_meta"
 requires = ["setuptools>=66.1.0"]
 
 [project]
-description = "A simple cookiecutter template for simple Python projects."
 name = "cookie-cutter-Pyhon"
-readme = "README.md"
 version = "0.0.1"
+description = "A simple cookiecutter template for simple Python projects."
+readme = "README.md"
 
 [project.optional-dependencies]
 dev = [
-  "cookiecutter==2.1.1",
-  "mypy==0.991",
-  "pre-commit==3.0.3",
-  "pylint==2.16.1",
-  "pytest==7.2.1",
-  "pytest_bdd==6.1.1",
-  "tox==4.4.4"
+    "cookiecutter==2.1.1",
+    "mypy==0.991",
+    "pre-commit==3.0.3",
+    "pylint==2.16.1",
+    "pytest==7.2.1",
+    "pytest_bdd==6.1.1",
+    "tox==4.4.4",
 ]
 
 [tool]
@@ -28,19 +28,37 @@ line-length = 88
 strict = true
 
 [tool.pylint]
-bad-names = ["foo", "bar", "baz", "data", "tmp", "temp"]
+bad-names = ["bar", "baz", "data", "foo", "temp", "tmp"]
 bad-names-rgxs = [
-  ".*[C c]heck(er)?.*",
-  ".*[H h]elp(er)?.*",
-  ".*[G g]ett(er)?",
-  ".*[I i]nfo.*",
-  ".*[M m]ake.*",
-  ".*[P p]rocess.*",
-  ".*[U u]til.*",
-  ".*[V v]alidate.*",
-  ".*[V v]erify.*",
-  "my_.*"
+    ".*[C c]heck(er)?.*",
+    ".*[G g]ett(er)?",
+    ".*[H h]elp(er)?.*",
+    ".*[I i]nfo.*",
+    ".*[M m]ake.*",
+    ".*[P p]rocess.*",
+    ".*[U u]til.*",
+    ".*[V v]alidate.*",
+    ".*[V v]erify.*",
+    "my_.*",
 ]
 disable = ["C0114", "C0115", "C0116"]
-good-names = ["i", "j", "k", "fp", "ex"]
+good-names = ["ex", "fp", "i", "j", "k"]
 max-line-length = 88
+
+[tool.tomlsort]
+all = false
+check = false
+ignore_case = true
+in_place = true
+no_block_comments = false
+no_comments = false
+no_footer_comments = false
+no_header_comments = false
+no_inline_comments = false
+no_sort_tables = true
+sort_inline_arrays = true
+sort_inline_tables = true
+sort_table_keys = false
+spaces_before_inline_comment = 2
+spaces_indent_inline_array = 4
+trailing_comma_inline_array = true
