@@ -10,13 +10,15 @@ readme = "README.md"
 
 [project.optional-dependencies]
 dev = [
-    "cookiecutter==2.1.1",
     "mypy==0.991",
     "pre-commit==3.0.3",
     "pylint==2.16.1",
+    "tox==4.4.4",
+]
+test = [
+    "cookiecutter==2.1.1",
     "pytest==7.2.1",
     "pytest_bdd==6.1.1",
-    "tox==4.4.4",
 ]
 
 [tool]

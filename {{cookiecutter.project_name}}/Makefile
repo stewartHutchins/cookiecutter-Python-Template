@@ -8,7 +8,7 @@ $(VENV_DEV):
 	$(PYTHON_BIN) -m venv $(VENV_DEV); \
 		. $(VENV_DEV)/bin/activate; \
 		pip install --upgrade pip; \
-		pip install -e .[dev];
+		pip install -e .[dev,test];
 
 .git/hooks/pre-commit: $(VENV_DEV)
 	. $(VENV_DEV)/bin/activate; \
