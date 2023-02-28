@@ -5,7 +5,9 @@ repos:
   - id: check-added-large-files
   - id: check-case-conflict
   - id: check-ast
+    exclude: ^{{cookiecutter\.project_name}}
   - id: check-toml
+    exclude: ^{{cookiecutter\.project_name}}
   - id: check-yaml
   - id: end-of-file-fixer
   - id: mixed-line-ending
@@ -20,15 +22,18 @@ repos:
   rev: v0.22.3
   hooks:
   - id: toml-sort-fix
+    exclude: ^{{cookiecutter\.project_name}}
 - repo: https://github.com/asottile/reorder_python_imports
   rev: v3.9.0
   hooks:
   - id: reorder-python-imports
     args: [--application-directories, src/]
+    exclude: ^{{cookiecutter\.project_name}}
 - repo: https://github.com/psf/black
   rev: 23.1.0
   hooks:
   - id: black
+    exclude: ^{{cookiecutter\.project_name}}
 - repo: https://github.com/PyCQA/docformatter
   rev: v1.5.1
   hooks:
@@ -40,6 +45,7 @@ repos:
     entry: pylint
     language: system
     files: \.py$
+    exclude: ^{{cookiecutter\.project_name}}
 - repo: local
   hooks:
   - id: mypy
@@ -48,3 +54,4 @@ repos:
     args: [--ignore-missing-imports]
     language: system
     files: \.py$
+    exclude: ^{{cookiecutter\.project_name}}
