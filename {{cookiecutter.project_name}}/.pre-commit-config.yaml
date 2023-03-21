@@ -40,16 +40,11 @@ repos:
     entry: pylint
     language: system
     files: \.py$
-- repo: https://github.com/pre-commit/mirrors-mypy
-  rev: v1.0.1
+- repo: local
   hooks:
   - id: mypy
-    name: mypy-src
-    files: src/.*
-    additional_dependencies:
-    - .
-  - id: mypy
-    name: mypy-tests
-    files: tests/.*
-    additional_dependencies:
-    - .[test]
+    name: MyPy
+    entry: mypy
+    args: [--ignore-missing-imports]
+    language: system
+    files: \.py$
