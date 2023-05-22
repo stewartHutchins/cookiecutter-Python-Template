@@ -59,6 +59,7 @@ def assert_tests_work(tmp_path: Path) -> None:
 @then("pre-commit can be run without error")
 def assert_pre_commit_alters_no_files(tmp_path: Path) -> None:
     repo_path = tmp_path.joinpath(_PROJECT_NAME)
+    subprocess.run("make setup-dev", cwd=repo_path, shell=True, check=True)
     _pre_commit("run --all-files", repo_path, check=True)
 
 
@@ -68,11 +69,11 @@ def _git_init(repo: Path) -> None:
 
 def _pre_commit(args: str, repo: Path, *, check: bool) -> None:
     subprocess.run(
-        f"""
-    . .venv-dev/bin/activate &&
-    git add . &&
-    pre-commit {args}
-    """,
+        f"""\
+make setup-dev \\
+&& . .venv-dev/bin/activate \\
+&& git add . \\
+&& pre-commit {args}""",
         cwd=repo,
         check=check,
         shell=True,
