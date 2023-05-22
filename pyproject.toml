@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
 requires = ["setuptools>=66.1.0"]
 
 [project]
-name = "cookie-cutter-Pyhon"
+name = "cookie-cutter-Python"
 version = "0.0.1"
 description = "A simple cookiecutter template for simple Python projects."
 readme = "README.md"
