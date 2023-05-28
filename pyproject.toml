@@ -30,21 +30,21 @@ line-length = 88
 strict = true
 
 [tool.pylint]
-bad-names = ["bar", "baz", "data", "foo", "temp", "tmp"]
+bad-names = ["bar", "baz", "count", "data", "foo", "info", "temp", "tmp"]
 bad-names-rgxs = [
     ".*[C c]heck(er)?.*",
     ".*[G g]ett(er)?",
     ".*[H h]elp(er)?.*",
-    ".*[I i]nfo.*",
-    ".*[M m]ake.*",
-    ".*[P p]rocess.*",
-    ".*[U u]til.*",
-    ".*[V v]alidate.*",
-    ".*[V v]erify.*",
+    ".*[I]nfo(rmation)?.*",
+    ".*[M m]ake(r)?.*",
+    ".*[P p]rocess(er)?.*",
+    ".*[U u]til(s)?.*",
+    ".*[V v]alidate(r)?.*",
+    ".*[V v]erif((y)|(ier)).*",
     "my_.*",
 ]
 disable = ["C0114", "C0115", "C0116"]
-good-names = ["ex", "fp", "i", "j", "k"]
+good-names = ["ex", "fp", "i", "j", "k", "test_utils"]
 max-line-length = 88
 
 [tool.tomlsort]
