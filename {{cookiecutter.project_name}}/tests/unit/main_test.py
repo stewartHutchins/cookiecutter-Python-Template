@@ -4,7 +4,7 @@ from {{cookiecutter.package_name}}.main import main
 
 
 def test_main(capfd: CaptureFixture[str]) -> None:
-    """main() should print "Hello World!"."""
+    """The program should print "Hello World!"."""
     # act
     main()
 

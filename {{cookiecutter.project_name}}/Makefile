@@ -15,7 +15,7 @@ $(VENV_TOX):
 	$(PYTHON_BIN) -m venv $(VENV_TOX); \
 		. $(VENV_TOX)/bin/activate; \
 		pip install --upgrade pip; \
-		pip install tox==4.4.4;
+		pip install tox==4.11.1;
 
 .git/hooks/pre-commit: $(VENV_DEV)
 	. $(VENV_DEV)/bin/activate; \

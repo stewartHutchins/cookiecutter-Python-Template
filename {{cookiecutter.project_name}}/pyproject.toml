@@ -11,13 +11,13 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = [
-    "mypy==0.991",
-    "pre-commit==3.0.3",
-    "pylint==2.16.1",
-    "tox==4.4.4",
+    "mypy==1.5.1",
+    "pre-commit==3.4.0",
+    "pylint==2.17.5",
+    "tox==4.11.1",
 ]
 test = [
-    "pytest==7.2.1",
+    "pytest==7.4.1",
 ]
 
 [project.scripts]
