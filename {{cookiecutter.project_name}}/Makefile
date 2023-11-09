@@ -2,8 +2,8 @@
 PYTHON_VERSION := 3.11
 PYTHON_BIN := python$(PYTHON_VERSION)
 
+VENV_CI := .venv-ci
 VENV_DEV := .venv-dev
-VENV_TOX := .venv-tox
 
 $(VENV_DEV):
 	$(PYTHON_BIN) -m venv $(VENV_DEV); \
@@ -11,11 +11,11 @@ $(VENV_DEV):
 		pip install --upgrade pip; \
 		pip install -e .[dev,test];
 
-$(VENV_TOX):
-	$(PYTHON_BIN) -m venv $(VENV_TOX); \
-		. $(VENV_TOX)/bin/activate; \
+$(VENV_CI):
+	$(PYTHON_BIN) -m venv $(VENV_CI); \
+		. $(VENV_CI)/bin/activate; \
 		pip install --upgrade pip; \
-		pip install tox==4.11.1;
+		pip install -r requirements-ci.txt;
 
 .git/hooks/pre-commit: $(VENV_DEV)
 	. $(VENV_DEV)/bin/activate; \
@@ -25,15 +25,15 @@ $(VENV_TOX):
 setup-dev: $(VENV_DEV) .git/hooks/pre-commit
 
 .PHONY: test
-test: $(VENV_TOX)
-	. $(VENV_TOX)/bin/activate; \
+test: $(VENV_CI)
+	. $(VENV_CI)/bin/activate; \
 	tox
 
 .PHONY: clean
 clean:
 	rm -rf \
 		$(VENV_DEV) \
-		$(VENV_TOX) \
+		$(VENV_CI) \
 		build/ \
 		$(shell find . -iname '*.egg-info' -type d) \
 		$(shell find . -iname __pycache__ -type d) \
