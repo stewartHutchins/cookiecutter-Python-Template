@@ -10,11 +10,6 @@ readme = "README.md"
 dependencies = []
 
 [project.optional-dependencies]
-dev = [
-    "mypy==1.5.1",
-    "pre-commit==3.4.0",
-    "pylint==2.17.5",
-]
 test = [
     "pytest==7.4.1",
 ]

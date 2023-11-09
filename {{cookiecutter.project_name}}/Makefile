@@ -9,7 +9,7 @@ $(VENV_DEV):
 	$(PYTHON_BIN) -m venv $(VENV_DEV); \
 		. $(VENV_DEV)/bin/activate; \
 		pip install --upgrade pip; \
-		pip install -e .[dev,test];
+		pip install -e .[test] -r requirements-dev.txt;
 
 $(VENV_CI):
 	$(PYTHON_BIN) -m venv $(VENV_CI); \
