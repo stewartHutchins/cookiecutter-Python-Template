@@ -1,5 +1,5 @@
 
-PYTHON_VERSION := 3.11
+PYTHON_VERSION := 3.12
 PYTHON_BIN := python$(PYTHON_VERSION)
 
 VENV_CI := .venv-ci
