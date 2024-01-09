@@ -32,11 +32,11 @@ test: $(VENV_CI)
 .PHONY: clean
 clean:
 	rm -rf \
-		$(VENV_DEV) \
 		$(VENV_CI) \
+		$(VENV_DEV) \
 		build/ \
-		$(shell find . -iname '*.egg-info' -type d) \
-		$(shell find . -iname __pycache__ -type d) \
-		$(shell find . -iname .pytest_cache -type d) \
-		.mypy_cache \
-		.tox
+		$(shell find . -type d -name '*.egg-info' ) \
+		$(shell find src/ tests/ -type d -name '__pycache__') \
+		$(shell find src/ tests/ -type d -name .pytest_cache) \
+		.mypy_cache/ \
+		.tox/
