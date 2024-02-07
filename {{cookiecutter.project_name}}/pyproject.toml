@@ -1,6 +1,6 @@
 [build-system]
 build-backend = "setuptools.build_meta"
-requires = ["setuptools>=68.2.2"]
+requires = ["setuptools>=69.0.3"]
 
 [project]
 name = "{{cookiecutter.package_name}}"
@@ -11,7 +11,7 @@ dependencies = []
 
 [project.optional-dependencies]
 test = [
-    "pytest==7.4.3",
+    "pytest==8.0.0",
 ]
 
 [project.scripts]
