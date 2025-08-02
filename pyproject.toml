@@ -1,6 +1,6 @@
 [build-system]
 build-backend = "setuptools.build_meta"
-requires = ["setuptools>=69.0.3"]
+requires = ["setuptools>=80.0.0"]
 
 [project]
 name = "cookie-cutter-Python-Template"
